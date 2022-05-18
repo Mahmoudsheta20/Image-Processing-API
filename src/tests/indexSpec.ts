@@ -15,7 +15,7 @@ describe("test start endpoint:", (): void => {
 describe("test api image endpoint:", (): void => {
   it("api/image", async (): Promise<void> => {
     const response: supertest.Response = await request.get(
-      "/api/image?name=imageOne&width=600&height=500"
+      "/api/image?name=encenadaport&width=600&height=500"
     );
     expect(response.status).toBe(200);
   });
@@ -31,7 +31,7 @@ describe("Test not found endpoint:", (): void => {
 afterAll(async (): Promise<void> => {
   const resize: string = path.resolve(
     __dirname,
-    "../../image/new/imageOne-new.jpg"
+    "../../image/new/encenadaport-new.jpg"
   );
 
   try {

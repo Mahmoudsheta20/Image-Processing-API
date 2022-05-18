@@ -1,6 +1,6 @@
 import express, { Express, Request, Response } from "express";
 const app: Express = express();
-import { router } from "./router/image";
+import  router  from "./router/image";
 const port = 5000;
 app.get("/", async (req: Request, res: Response) => {
   res.send("welcom api Image perocessing");

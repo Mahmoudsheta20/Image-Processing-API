@@ -14,12 +14,12 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 Object.defineProperty(exports, "__esModule", { value: true });
 const express_1 = __importDefault(require("express"));
 const app = (0, express_1.default)();
-const image_1 = require("./router/image");
+const image_1 = __importDefault(require("./router/image"));
 const port = 5000;
-app.get('/', (req, res) => __awaiter(void 0, void 0, void 0, function* () {
-    res.send('welcom api Image perocessing');
+app.get("/", (req, res) => __awaiter(void 0, void 0, void 0, function* () {
+    res.send("welcom api Image perocessing");
 }));
-app.use(image_1.router);
+app.use(image_1.default);
 app.listen(port, () => __awaiter(void 0, void 0, void 0, function* () {
     console.log(`http://localhost:${port}`);
 }));
