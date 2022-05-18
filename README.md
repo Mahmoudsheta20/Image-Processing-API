@@ -13,6 +13,9 @@
 - name is namefile 
 - width is value number 
 - heigth is value nuber 
+## middelware use in project
+- node-cache:
+- It was used for cache storage 
 
 
 
