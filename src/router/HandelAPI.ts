@@ -8,7 +8,7 @@ const test = async (
   req: exprees.Request,
   res: exprees.Response,
   next: Function
-) => {
+): Promise<void> => {
   const name = String(req.query.name);
   const width = Number(req.query.width);
   const height = Number(req.query.height);

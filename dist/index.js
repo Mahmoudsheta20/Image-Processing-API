@@ -15,9 +15,9 @@ Object.defineProperty(exports, "__esModule", { value: true });
 const express_1 = __importDefault(require("express"));
 const app = (0, express_1.default)();
 const RouteAPI_1 = __importDefault(require("./router/RouteAPI"));
-const port = 5000;
-app.get('/', (req, res) => __awaiter(void 0, void 0, void 0, function* () {
-    res.send('<h2>welcom api Image Processing</h2>');
+const port = 5550 | 5000;
+app.get("/", (req, res) => __awaiter(void 0, void 0, void 0, function* () {
+    res.send("<h2>welcom api Image Processing</h2>");
 }));
 app.use(RouteAPI_1.default);
 app.listen(port, () => __awaiter(void 0, void 0, void 0, function* () {

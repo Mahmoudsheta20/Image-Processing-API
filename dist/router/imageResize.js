@@ -15,24 +15,15 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.imageconvert = exports.cache = void 0;
 const sharp_1 = __importDefault(require("sharp"));
 const node_cache_1 = __importDefault(require("node-cache"));
-const cache = new node_cache_1.default({ stdTTL: 10 });
+const cache = new node_cache_1.default({ stdTTL: 100 });
 exports.cache = cache;
+const stats = sharp_1.default.cache();
 const imageconvert = (img, width, height, newImage) => __awaiter(void 0, void 0, void 0, function* () {
     try {
-        if (cache.get('imageName') === newImage &&
-            cache.get('width') === width &&
-            cache.get('height') === height) {
-            console.log('cache');
-            return newImage;
-        }
-        else {
-            yield (0, sharp_1.default)(img)
-                .resize({ width: width, height: height })
-                .toFile(newImage);
-            cache.set('imageName', newImage);
-            cache.set('width', width);
-            cache.set('height', width);
-        }
+        yield (0, sharp_1.default)(img).resize({ width: width, height: height }).toFile(newImage);
+        cache.set("imageName", newImage);
+        cache.set("width", width);
+        cache.set("height", height);
     }
     catch (err) {
         console.log(err);
