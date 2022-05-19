@@ -4,7 +4,7 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 const express_1 = __importDefault(require("express"));
-const convert_1 = __importDefault(require("./convert"));
+const HandelAPI_1 = __importDefault(require("./HandelAPI"));
 const router = express_1.default.Router();
-router.get("/api/image", convert_1.default, (req, res) => { });
+router.get('/api/image', HandelAPI_1.default, (req, res) => { });
 exports.default = router;
